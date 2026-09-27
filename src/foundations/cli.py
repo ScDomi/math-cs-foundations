@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from .primes import sieve_atkin, sieve_eratosthenes
 from .sequence_search import binary_search, interpolation_search, linear_search
-from .signature import signature_line
 from .sudoku import is_valid_solution, solve_sudoku
 from .tictactoe import alphabeta_best_move
 from .turmites import simulate
@@ -38,7 +37,6 @@ def main() -> None:
     ]
     solved = solve_sudoku(puzzle)
     print("Math & CS foundations demo")
-    print(signature_line())
     print(f"primes <= 50: {primes_e}")
     print(f"Atkin matches Eratosthenes: {primes_a == primes_e}")
     print(f"sequence-search indices for 18: {sequence_hits}")

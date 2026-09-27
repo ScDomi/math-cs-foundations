@@ -2,8 +2,6 @@
 
 A curated multi-language showcase repo built from Domi's older foundations projects. It is intentionally small and transparent: multiple classic computer-science building blocks, preserved original coursework code, plus a modern testable Python package that demonstrates the same ideas without forcing people to run old IDE projects.
 
-**Domi principle:** less but sharper. Not every old project belongs in the spotlight; the ones that stay should hit hard.
-
 ## Foundation map
 
 | Foundation | What it demonstrates | Showcase module | Original source |
@@ -65,7 +63,6 @@ The CLI intentionally touches several foundations in one run:
 
 ```text
 Math & CS foundations demo
-Domi principle: less but sharper — Not every old project belongs in the spotlight; the ones that stay should hit hard.
 primes <= 50: [...]
 Atkin matches Eratosthenes: True
 sequence-search indices for 18: {'linear': 9, 'binary': 9, 'interpolation': 9}
