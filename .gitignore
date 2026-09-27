@@ -7,3 +7,5 @@ __pycache__/
 dist/
 build/
 *.egg-info/
+/original_projects/cpp_oop_inventory/cpp_oop_inventory
+/original_projects/cpp_oop_inventory/exported_warehouse_data.txt

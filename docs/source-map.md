@@ -11,6 +11,7 @@ This repo is intentionally based on the old project material in `original_projec
 | `original_projects/SudokuSolverProlog` | `original_projects/SudokuSolverProlog` | Original Prolog CLP(FD) Sudoku solver for 4x4, 6x6 and 9x9 puzzles. |
 | `foundations.tictactoe` | `original_projects/TicTacToeAI` | Python adaptation of the game-tree/minimax idea from the Java project. |
 | `foundations.turmites` | `original_projects/Turmites` | Minimal importable Langton's Ant core; visual scripts/screenshots remain preserved in originals. |
+| `original_projects/cpp_oop_inventory` | old `WareHouseSystem` repo | Original C++ OOP/file-I/O exercise preserved close to source and reframed as typed language-fundamentals work. |
 | `original_projects/VierGewinntKI` | old Connect Four AI repo | Preserved as source material. Not yet normalized into the importable package. |
 
 Adaptation rule: preserve old code under `original_projects/`; only adapt code into `src/foundations/` when needed for importability, tests, or CLI demos.

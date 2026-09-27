@@ -12,13 +12,14 @@ A curated multi-language showcase repo built from Domi's older foundations proje
 | Constraint solving | Sudoku backtracking with minimum-remaining-values heuristic in Python; CLP(FD) Sudoku in Prolog | `foundations.sudoku`, `original_projects/SudokuSolverProlog` | Python showcase + Prolog source project |
 | Game AI | Tic-Tac-Toe minimax and alpha-beta pruning | `foundations.tictactoe` | `original_projects/TicTacToeAI` |
 | Cellular automata | Langton's Ant / turmite simulation core | `foundations.turmites` | `original_projects/Turmites` |
+| C++ OOP & File I/O | Typed object modeling, inheritance, file parsing and export logic | original-only, buildable C++ exercise | `original_projects/cpp_oop_inventory` |
 | Adversarial game experiments | Connect Four AI experiments preserved as source material | original-only for now | `original_projects/VierGewinntKI` |
 
 ## Repository layout
 
 ```text
 .
-├── original_projects/        # old project code preserved close to source
+├── original_projects/        # old project code preserved close to source, incl. C++ OOP exercise
 ├── src/foundations/          # importable, tested Python showcase package
 ├── tests/                    # regression/smoke tests for every foundation area
 ├── docs/source-map.md        # exact mapping from old projects to showcase modules
@@ -42,6 +43,7 @@ This is not a Python-only dump. The repo currently includes:
 - **Python**: importable package, tests, CLI, search algorithms, turmites and Connect Four experiments.
 - **Java**: original PrimeGenerator and TicTacToeAI projects with Maven/test structure.
 - **Prolog**: CLP(FD)-based Sudoku solver for 4x4, 6x6 and 9x9 puzzles.
+- **C++**: compact OOP/file-I/O inventory exercise, framed as typed language-fundamentals work.
 
 See `docs/language-map.md` for the exact map.
 
@@ -99,6 +101,6 @@ CI runs the same compile/test path on Python 3.10, 3.11 and 3.12.
 - Kept old source projects, but removed private review PDFs and build junk.
 - Added tests that cover each showcased foundation area.
 - Added `docs/source-map.md` so reviewers can see what came from where.
-- Added `docs/language-map.md` so reviewers see Python, Java and Prolog at a glance.
+- Added `docs/language-map.md` so reviewers see Python, Java, Prolog and C++ at a glance.
 - Connect Four is preserved as source material but not normalized into the importable package yet.
-- C++ is not included yet because no personal C++ source project was found under `/Users/domiai/Documents/workspace` during this pass.
+- C++ is included as `original_projects/cpp_oop_inventory`: close to the original project, with only tiny build-hygiene fixes and clearer portfolio framing.
