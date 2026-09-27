@@ -1,6 +1,7 @@
 from foundations.primes import miller_rabin, primes_trial, sieve_atkin, sieve_eratosthenes
 from foundations.search import astar, breadth_first_search, dijkstra
 from foundations.sequence_search import binary_search, exponential_search, interpolation_search, linear_search, linear_sentinel_search
+from foundations.signature import DOMI_SIGNATURE, signature_line
 from foundations.sudoku import is_valid_solution, solve_sudoku
 from foundations.tictactoe import alphabeta_best_move, winner
 from foundations.turmites import simulate
@@ -76,3 +77,9 @@ def test_langtons_ant_is_deterministic():
     grid, ant = simulate(10)
     assert len(grid) == 6
     assert (ant.row, ant.col, ant.direction) == (1, -1, 2)
+
+
+def test_signature_keeps_repo_intent_visible():
+    line = signature_line()
+    assert DOMI_SIGNATURE in line
+    assert "spotlight" in line
