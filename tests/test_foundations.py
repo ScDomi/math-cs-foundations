@@ -1,5 +1,6 @@
 from foundations.primes import miller_rabin, primes_trial, sieve_atkin, sieve_eratosthenes
 from foundations.search import astar, breadth_first_search, dijkstra
+from foundations.sequence_search import binary_search, exponential_search, interpolation_search, linear_search, linear_sentinel_search
 from foundations.sudoku import is_valid_solution, solve_sudoku
 from foundations.tictactoe import alphabeta_best_move, winner
 from foundations.turmites import simulate
@@ -12,6 +13,16 @@ def test_prime_algorithms_agree_on_small_range():
     assert sieve_atkin(30) == expected
     assert miller_rabin(2_147_483_647)
     assert not miller_rabin(2_147_483_645)
+
+
+def test_sequence_search_variants_find_same_index():
+    values = list(range(0, 41, 2))
+    assert linear_search(values, 18) == 9
+    assert linear_sentinel_search(values, 18) == 9
+    assert binary_search(values, 18) == 9
+    assert exponential_search(values, 18) == 9
+    assert interpolation_search(values, 18) == 9
+    assert binary_search(values, 19) is None
 
 
 def test_graph_search_finds_short_paths():

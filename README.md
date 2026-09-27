@@ -1,59 +1,91 @@
 # Math & CS Foundations
 
-A curated showcase repo built from Domi's older foundations projects. The goal is not to pretend this is a giant framework: it is a clean archive + small reusable Python package around classic algorithms, search, game AI and cellular automata.
+A curated showcase repo built from Domi's older foundations projects. It is intentionally small and transparent: multiple classic computer-science building blocks, preserved original coursework code, plus a modern testable Python package that demonstrates the same ideas without forcing people to run old IDE projects.
 
-## What is inside
+## Foundation map
 
-- `original_projects/` keeps the old project code close to the source material.
-  - `Suchalgorithmen`: sequence search algorithms in Python.
-  - `PrimeGenerator`: Java implementations of Eratosthenes, Atkin and concurrent prime checks.
-  - `TicTacToeAI`: Java Tic-Tac-Toe with tests and a smarter computer player.
-  - `Turmites`: Langton's Ant / turmite experiments and generated screenshots.
-  - `VierGewinntKI`: Connect Four AI experiments.
-- `src/foundations/` contains a lightweight Python package with the parts that are useful to import, test and demo.
-- `tests/` contains smoke-level regression tests so the repo stays runnable.
+| Foundation | What it demonstrates | Showcase module | Original source |
+|---|---|---|---|
+| Prime generation | Trial division, Sieve of Eratosthenes, Sieve of Atkin, deterministic Miller-Rabin | `foundations.primes` | `original_projects/PrimeGenerator` |
+| Sequence search | Linear, sentinel, binary, exponential and interpolation search | `foundations.sequence_search` | `original_projects/Suchalgorithmen` |
+| Graph search | BFS, DFS, Dijkstra and A* with path reconstruction | `foundations.search` | Extended from the search-algorithm theme |
+| Constraint solving | Sudoku backtracking with minimum-remaining-values heuristic | `foundations.sudoku` | Added as a compact foundations example |
+| Game AI | Tic-Tac-Toe minimax and alpha-beta pruning | `foundations.tictactoe` | `original_projects/TicTacToeAI` |
+| Cellular automata | Langton's Ant / turmite simulation core | `foundations.turmites` | `original_projects/Turmites` |
+| Adversarial game experiments | Connect Four AI experiments preserved as source material | original-only for now | `original_projects/VierGewinntKI` |
 
-## Design choice
+## Repository layout
 
-The old code is intentionally preserved in `original_projects/`. The showcase package only adapts where it makes the repo easier to run from a modern Python environment: small type hints, importable functions, deterministic tests and no GUI dependency in the default path.
+```text
+.
+├── original_projects/        # old project code preserved close to source
+├── src/foundations/          # importable, tested Python showcase package
+├── tests/                    # regression/smoke tests for every foundation area
+├── docs/source-map.md        # exact mapping from old projects to showcase modules
+└── .github/workflows/ci.yml  # compile + pytest on Python 3.10-3.12
+```
+
+## Why this structure
+
+The point is not to rewrite history and pretend the old projects were one perfectly planned framework. The old code stays visible in `original_projects/`. The package in `src/foundations/` adapts only what helps the repo be readable, importable, testable and easy to demo.
+
+That makes the repo understandable in two layers:
+
+1. **Archive layer:** real old projects, mostly untouched.
+2. **Showcase layer:** cleaned interface, tests and CLI so the foundations are obvious in 30 seconds.
 
 ## Quick start
 
 ```bash
 python -m pip install -e '.[dev]'
 pytest
-foundations demo
+foundations
 ```
 
-No dataset downloads, no heavyweight dependencies. `matplotlib` is optional and only needed for visual turmite experiments.
+No dataset downloads, no heavyweight runtime dependencies. `matplotlib` is optional and only needed for visual turmite experiments from the older scripts.
 
-## Demo examples
+## Demo output
+
+The CLI intentionally touches several foundations in one run:
+
+```text
+Math & CS foundations demo
+primes <= 50: [...]
+Atkin matches Eratosthenes: True
+sequence-search indices for 18: {'linear': 9, 'binary': 9, 'interpolation': 9}
+alpha-beta chooses move ...
+Langton ant after 100 steps: ...
+Sudoku solved: True
+```
+
+## Python examples
 
 ```python
 from foundations.primes import sieve_eratosthenes, sieve_atkin, miller_rabin
-from foundations.search import breadth_first_search
+from foundations.sequence_search import binary_search, interpolation_search
+from foundations.search import breadth_first_search, dijkstra, astar
 from foundations.sudoku import solve_sudoku
 from foundations.tictactoe import alphabeta_best_move
 from foundations.turmites import simulate
 
 assert sieve_eratosthenes(30) == sieve_atkin(30)
 assert miller_rabin(2_147_483_647)
+assert binary_search(list(range(0, 41, 2)), 18) == 9
+assert interpolation_search(list(range(0, 41, 2)), 18) == 9
 ```
 
 ## Verification
-
-This repo is meant to be boringly verifiable:
 
 ```bash
 python -m compileall src tests
 pytest
 ```
 
-## Repo status
+CI runs the same compile/test path on Python 3.10, 3.11 and 3.12.
 
-Portfolio polish is in progress. Current priorities before public release:
+## Current public-readiness notes
 
-1. Keep original source projects intact, without committing private review PDFs or build junk.
-2. Add CI for compile + tests.
-3. Add short notes explaining which original project each adapted module came from.
-4. Optionally publish as `math-cs-foundations` after final review.
+- Kept old source projects, but removed private review PDFs and build junk.
+- Added tests that cover each showcased foundation area.
+- Added `docs/source-map.md` so reviewers can see what came from where.
+- Connect Four is preserved as source material but not normalized into the importable package yet.
