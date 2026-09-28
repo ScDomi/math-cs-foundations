@@ -1,25 +1,26 @@
 # Math & CS Foundations
 
-A curated multi-language showcase repo built from Domi's older foundations projects. It is intentionally small and transparent: multiple classic computer-science building blocks, preserved original coursework code, plus a modern testable Python package that demonstrates the same ideas without forcing people to run old IDE projects.
+A curated multi-language showcase repo built from Domi's older foundations projects. It is intentionally small and transparent: classic computer-science building blocks in Python, Java, Prolog and C++, with preserved original coursework code plus cleaned showcase files that make the ideas readable without hiding the languages they were actually built in.
 
 ## Foundation map
 
-| Foundation | What it demonstrates | Showcase module | Original source |
+| Foundation | What it demonstrates | Showcase layer | Original source |
 |---|---|---|---|
-| Prime generation | Trial division, Sieve of Eratosthenes, Sieve of Atkin, deterministic Miller-Rabin | `foundations.primes` | `original_projects/PrimeGenerator` |
-| Sequence search | Linear, sentinel, binary, exponential and interpolation search | `foundations.sequence_search` | `original_projects/Suchalgorithmen` |
-| Graph search | BFS, DFS, Dijkstra and A* with path reconstruction | `foundations.search` | Extended from the search-algorithm theme |
-| Constraint solving | Sudoku backtracking with minimum-remaining-values heuristic in Python; CLP(FD) Sudoku in Prolog | `foundations.sudoku`, `original_projects/SudokuSolverProlog` | Python showcase + Prolog source project |
-| Game AI | Tic-Tac-Toe minimax and alpha-beta pruning | `foundations.tictactoe` | `original_projects/TicTacToeAI` |
-| Cellular automata | Langton's Ant / turmite simulation core | `foundations.turmites` | `original_projects/Turmites` |
-| C++ OOP & File I/O | Typed object modeling, inheritance, file parsing and export logic | original-only, buildable C++ exercise | `original_projects/cpp_oop_inventory` |
+| Prime generation | Trial division, Sieve of Eratosthenes, Sieve of Atkin, deterministic Miller-Rabin | Python package + Java showcase files | `original_projects/PrimeGenerator` |
+| Sequence search | Linear, sentinel, binary, exponential and interpolation search | Python package | `original_projects/Suchalgorithmen` |
+| Graph search | BFS, DFS, Dijkstra and A* with path reconstruction | Python package | Extended from the search-algorithm theme |
+| Constraint solving | Sudoku backtracking with minimum-remaining-values heuristic; CLP(FD) Sudoku in Prolog | Python package + Prolog showcase file | `original_projects/SudokuSolverProlog` |
+| Game AI | Tic-Tac-Toe minimax and alpha-beta pruning | Python package + Java showcase files | `original_projects/TicTacToeAI` |
+| Cellular automata | Langton's Ant / turmite simulation core | Python package | `original_projects/Turmites` |
+| C++ OOP & File I/O | Typed object modeling, inheritance, file parsing and export logic | C++ showcase files | `original_projects/cpp_oop_inventory` |
 | Adversarial game experiments | Connect Four AI experiments preserved as source material | original-only for now | `original_projects/VierGewinntKI` |
 
 ## Repository layout
 
 ```text
 .
-├── original_projects/        # old project code preserved close to source, incl. C++ OOP exercise
+├── original_projects/        # old project code preserved close to source, incl. Java/Prolog/C++
+├── showcase/                 # readable front-layer examples in the original languages
 ├── src/foundations/          # importable, tested Python showcase package
 ├── tests/                    # regression/smoke tests for every foundation area
 ├── docs/source-map.md        # exact mapping from old projects to showcase modules
@@ -29,12 +30,13 @@ A curated multi-language showcase repo built from Domi's older foundations proje
 
 ## Why this structure
 
-The point is not to rewrite history and pretend the old projects were one perfectly planned framework. The old code stays visible in `original_projects/`. The package in `src/foundations/` adapts only what helps the repo be readable, importable, testable and easy to demo.
+The point is not to rewrite history and pretend the old projects were one perfectly planned framework. The old code stays visible in `original_projects/`. The `showcase/` folder highlights selected Java, Prolog and C++ files directly, because the language range is part of the signal. The Python package in `src/foundations/` adds a small testable demo layer on top; it does not replace the original-language work.
 
-That makes the repo understandable in two layers:
+That makes the repo understandable in three layers:
 
-1. **Archive layer:** real old projects, mostly untouched.
-2. **Showcase layer:** cleaned interface, tests and CLI so the foundations are obvious in 30 seconds.
+1. **Original layer:** real old projects, mostly untouched.
+2. **Language showcase layer:** selected Java, Prolog and C++ files cleaned just enough to inspect quickly.
+3. **Python demo layer:** importable package, tests and CLI so the concepts are obvious in 30 seconds.
 
 ## Languages represented
 
