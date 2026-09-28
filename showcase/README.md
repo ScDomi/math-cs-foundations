@@ -1,34 +1,26 @@
-# Multi-language showcase
+# Showcase
 
-This folder exists so the repository does not look like the old Java, Prolog and C++ work was hidden in an archive while only the Python rewrite counts.
+Selected readable files and visual assets from the older foundations projects.
 
-The Python package is the clean demo layer, but these files are also part of the showcase: they show the same foundations in the languages they were originally implemented in.
+This folder is not meant to turn the repo into a package. It just makes the interesting parts easier to inspect from GitHub.
 
 ## Java
 
-`showcase/java/`
-
 - `SieveOfEratosthenes.java` — classic prime sieve
 - `SieveOfAtkin.java` — more advanced prime sieve using quadratic residues
-- `ConcurrentPrimeChecker.java` — concurrent prime-checking structure from the original Java project
-- `Board.java` / `Player.java` / `Computer.java` / `SmartComputer.java` — Tic-Tac-Toe board logic, player abstractions and AI decision-making
-
-These files are lightly adjusted copies from the Maven projects in `original_projects/` so they are easier to inspect directly from GitHub.
+- `ConcurrentPrimeChecker.java` — concurrent prime-checking structure
+- `Board.java` / `Player.java` / `Computer.java` / `SmartComputer.java` — Tic-Tac-Toe board logic and AI behavior
 
 ## Prolog
 
-`showcase/prolog/sudoku_solver.pl`
-
-A CLP(FD)-based Sudoku solver for 4x4, 6x6 and 9x9 boards. This is intentionally kept in Prolog because constraint solving is exactly where Prolog makes sense.
+- `sudoku_solver.pl` — CLP(FD)-based Sudoku solver for 4x4, 6x6 and 9x9 boards
 
 ## C++
 
-`showcase/cpp/`
+- selected inventory/OOP files showing typed modeling and file I/O
 
-A small OOP/file-I/O inventory exercise showing typed modeling, inheritance-style structure and parsing/export logic. This stays C++ instead of being translated into Python because the point is the language range.
+## Assets
 
-## Original sources
+- turmite / Langton's Ant output images used by the main README
 
-The fuller old projects are still preserved under `original_projects/`.
-
-This folder is the readable front layer. `original_projects/` is the source archive.
+Fuller source material stays in `original_projects/`.
