@@ -183,3 +183,7 @@ NOTICE.md           portfolio/context note
 ## Note
 
 This repository is shared for reading and evaluation. It is not maintained as a reusable package or open-source project.
+
+---
+
+<sub>scryx · rules are defaults, not truth</sub>
